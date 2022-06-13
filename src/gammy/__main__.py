@@ -21,7 +21,7 @@ def main():
     pygame.display.set_caption(f'{name} {version}')
 
     size = width, height = (800, 600)
-    speed = [2, 1]
+    speed = [5, 2]
     background_color = (0, 192, 224)
 
     screen = pygame.display.set_mode(size)
@@ -29,6 +29,8 @@ def main():
     logo_filename = ilr.files(__package__) / 'logo.png'
     ball = pygame.image.load(str(logo_filename))
     ballrect = ball.get_rect()
+
+    clock = pygame.time.Clock()
 
     while 1:
         for event in pygame.event.get():
@@ -46,6 +48,8 @@ def main():
 
         screen.fill(background_color)
         screen.blit(ball, ballrect)
+
+        clock.tick(60)
 
         pygame.display.flip()
 
