@@ -27,7 +27,7 @@ def main():
     screen = pygame.display.set_mode(size)
 
     logo_filename = ilr.files(__package__) / 'logo.png'
-    ball = pygame.image.load(str(logo_filename))
+    ball = pygame.image.load(str(logo_filename)).convert_alpha()
     ballrect = ball.get_rect()
 
     clock = pygame.time.Clock()
