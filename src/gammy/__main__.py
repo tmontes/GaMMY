@@ -30,6 +30,8 @@ def main():
     ball = pygame.image.load(str(logo_filename)).convert_alpha()
     ballrect = ball.get_rect()
 
+    pygame.display.set_icon(ball)
+
     clock = pygame.time.Clock()
 
     while 1:
